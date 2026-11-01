@@ -43,6 +43,26 @@ F:\llcl\
 └── README.md
 ```
 
+## 版本号规则（务必遵守）
+
+版本号始终是 `1.x.x`（当前最新 `1.4.0`）。每次改完代码都要按改动类型递增：
+
+- **新功能 / 界面变化** → 次要位 +1（如 `1.4.0` → `1.5.0`）。
+- **bug 修复 / 维护 / 小调整** → 补丁位 +1（如 `1.4.0` → `1.4.1`）。
+
+修改版本号的地方：
+
+```cpp
+// F:\llcl\dev\src\llcl.h
+#define LLCL_VERSION L"1.4.0"
+```
+
+改完后运行 `F:\llcl\dev\build.ps1`，会自动读取版本号并输出到
+`release\<新版本号>\`（单文件 exe + zip + ini/README）。
+
+> 发布到 GitHub 后，新版本对应的源码与 `release\<新版本号>\` 产物同样提交并推送，
+> 让仓库始终和最新版本一致。
+
 `dev\build.ps1` 会从 `src\llcl.h` 读取 `LLCL_VERSION`，自动输出到 `release\<版本号>\`，
 复制 `dev\release-files\LLcl.ini` 与 `README.txt`，并生成同目录的 zip。
 
