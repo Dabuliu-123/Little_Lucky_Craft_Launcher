@@ -1,0 +1,22 @@
+﻿# 生成 / 下载产物，不入库
+dev.zip
+dev/build/
+dev/runtime/
+dev/testdata/
+dev/e2e/
+dev/logs-root/
+dev/installer-root.log
+dev/nettest*.txt
+
+# 每个发行版目录里的 Java 运行时缓存
+release/*/runtime/
+release/*/instance/
+
+# 编译中间产物
+*.obj
+*.o
+run.bat
+
+# 运行时生成
+*.log
+.minecraf*/
